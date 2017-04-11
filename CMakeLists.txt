@@ -21,6 +21,17 @@ elseif( COMPILER_SUPPORTS_CXX0X)
 else()
     # MSVC, On by default (if available)
 endif()
+
+if(MSVC)
+MESSAGE( STATUS "MSVC")
+set(CMAKE_CXX_FLAGS_RELEASE "/MT")
+set(CMAKE_CXX_FLAGS_DEBUG "/MTd")
+else()
+
+endif()
+
+
+
 ADD_SUBDIRECTORY(ext/curlcpp) # Change `ext/curlcpp` to a directory according to your setup
 INCLUDE_DIRECTORIES(${CURLCPP_SOURCE_DIR}/include)
 include("cmake/Modules/FindGlog.cmake")  
