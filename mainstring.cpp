@@ -1,13 +1,29 @@
+#include <iostream>
+#include <ostream>
+
 #include "curl_easy.h"
+#include "curl_form.h"
+#include "curl_ios.h"
 #include "curl_exception.h"
-#include <glog/logging.h>
+
+using std::cout;
+using std::endl;
+using std::ostringstream;
+
 using curl::curl_easy;
+using curl::curl_ios;
 using curl::curl_easy_exception;
 using curl::curlcpp_traceback;
 
-int main(int argc, const char **argv) {
-    curl_easy easy;
-    // Add some option to the curl_easy object.
+int main() {
+    // Create a stringstream object
+    ostringstream str;
+    // Create a curl_ios object, passing the stream object.
+    curl_ios<ostringstream> writer(str);
+
+    // Pass the writer to the easy constructor and watch the content returned in that variable!
+    curl_easy easy(writer);
+    // Add some option to the easy handle
     easy.add<CURLOPT_URL>("http://www.baidu.com");
     easy.add<CURLOPT_FOLLOWLOCATION>(1L);
     try {
@@ -20,5 +36,8 @@ int main(int argc, const char **argv) {
         error.print_traceback();
         // Note that the printing the stack will erase it
     }
+    // Let's print the stream content.
+    cout<<str.str()<<endl;
+    cout<<"hello";
     return 0;
 }
