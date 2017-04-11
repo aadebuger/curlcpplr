@@ -25,6 +25,9 @@ ADD_SUBDIRECTORY(ext/curlcpp) # Change `ext/curlcpp` to a directory according to
 INCLUDE_DIRECTORIES(${CURLCPP_SOURCE_DIR}/include)
 include("cmake/Modules/FindGlog.cmake")  
 #find_package(lib_glog REQUIRED)  
+find_package(CURL  REQUIRED)
+include_directories(${CURL_INCLUDE_DIRS})
+
 include_directories(${GLOG_INCLUDE_DIRS})
 
 add_executable( ${PROJECT_NAME} main.cpp )
