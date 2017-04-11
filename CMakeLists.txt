@@ -36,7 +36,7 @@ if(MSVC)
 MESSAGE( STATUS "MSVC")
 MESSAGE( STATUS  ${CURL_LIBRARY} )
 link_directories( ${CURL_LIBRARY} )
-target_link_libraries(${PROJECT_NAME} curlcpp d:/libcurl_a.lib)
+target_link_libraries(${PROJECT_NAME} curlcpp d:/libcurl.lib)
 else()
 target_link_libraries(${PROJECT_NAME} curlcpp)
 
