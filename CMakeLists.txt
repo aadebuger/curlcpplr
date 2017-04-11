@@ -43,12 +43,12 @@ add_executable( threadfuture mainfuture.cpp )
 
 target_link_libraries(threadfuture curlcpp)
 
-add_executable( cp11-async-curl cp11-async-curl.cpp )
+#add_executable( cp11-async-curl cp11-async-curl.cpp )
 
-target_link_libraries(cp11-async-curl curlcpp)
+#target_link_libraries(cp11-async-curl curlcpp)
 
-add_executable( boostsignals2 boost-signals2lr.cpp )
+#add_executable( boostsignals2 boost-signals2lr.cpp )
 
-target_link_libraries(cp11-async-curl )
+#target_link_libraries(cp11-async-curl )
 
 
