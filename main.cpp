@@ -1,6 +1,6 @@
 #include "curl_easy.h"
 #include "curl_exception.h"
-#include <glog/logging.h>
+//#include <glog/logging.h>
 using curl::curl_easy;
 using curl::curl_easy_exception;
 using curl::curlcpp_traceback;
